@@ -1,0 +1,129 @@
+$primary-color: grey;
+
+.outer{
+    background-color: lighten($primary-color, $amount: 40%);
+    margin: auto;
+    text-align: center;
+    display: flex;
+    padding: 2rem;
+    height: 700px;
+    font-size: large;
+}
+
+.to-do-card{
+    width: 50%;
+    background-color: white;
+    border-radius: 10px;
+    margin: auto;
+    box-shadow: 2px 5px 10px $primary-color;
+}
+
+.styled-input {
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: groove;
+    background-color: lighten($primary-color, $amount: 30%);
+    padding: 1rem;
+}
+  
+.no-outline:focus {
+    outline: none;
+}
+
+.button{
+    background-color: $primary-color;
+    color: lighten($primary-color, $amount: 40%);
+}
+
+.p-0{
+    padding: 0px !important;
+}
+
+.p-1{
+    padding: 1rem !important;
+}
+
+.pt-1{
+    padding-top: 1rem !important;
+}
+
+.pr-1{
+    padding-right: 1rem !important;
+}
+
+.pb-1{
+    padding-bottom: 1rem !important;
+}
+
+.pb-2{
+    padding-bottom: 2rem !important;
+}
+
+.px-0_5{
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+}
+
+.px-2{
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+}
+
+.m-0{
+    margin: 0px !important;
+}
+
+.mt-0_5{
+    margin-top: 0.5rem !important;
+}
+
+.mt-1{
+    margin-top: 1rem !important;
+}
+
+.mb-1{
+    margin-bottom: 1rem !important;
+}
+
+.w-100{
+    width: 100%;
+}
+
+.d-flex{
+    display: flex;
+}
+
+.fr{
+    float: right;
+}
+
+.min-height-48{
+    min-height: 48px;
+}
+
+.to-do-item{
+    min-height: 48px;
+    background-color: lighten($primary-color, $amount: 40%);
+    border-top: 2px solid white;
+}
+
+.done{
+    text-decoration: line-through;
+}
+
+input[type = checkbox]{
+    height: 24px;
+    width: 24px;
+}
+
+.remove-button{
+    min-height: 24px;
+    width: 24px;
+    font-size: small;
+    border-radius: 16px;
+}
+
+.to-do-text{
+    text-align: left;
+}

@@ -1,0 +1,18 @@
+{
+  "name": "to-do-app",
+  "version": "1.0.0",
+  "description": "A simple To-do application",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/parampreet-kaur/assemble.git"
+  },
+  "author": "parampreet-kaur",
+  "license": "ISC",
+  "dependencies": {
+    "lite-server": "^2.5.4"
+  }
+}
