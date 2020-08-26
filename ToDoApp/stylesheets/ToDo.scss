@@ -2,19 +2,19 @@ $primary-color: grey;
 
 .outer{
     background-color: lighten($primary-color, $amount: 40%);
-    margin: auto;
     text-align: center;
     display: flex;
     padding: 2rem;
-    height: 700px;
     font-size: large;
 }
 
 .to-do-card{
-    width: 50%;
+    width: 40%;
     background-color: white;
     border-radius: 10px;
     margin: auto;
+    margin-top: 10rem;
+    margin-bottom: 10rem;
     box-shadow: 2px 5px 10px $primary-color;
 }
 
@@ -110,6 +110,8 @@ $primary-color: grey;
 
 .done{
     text-decoration: line-through;
+    background-color: lighten($primary-color, $amount: 45%);
+    color: $primary-color;
 }
 
 input[type = checkbox]{

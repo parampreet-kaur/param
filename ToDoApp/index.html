@@ -9,61 +9,33 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+        function addToDo(){
+            let toDoInput = document.getElementById("toDoInput");
+            addNewToDoItem(toDoInput.value);
+            toDoInput.value = "";
+        }
+
+        function addToDoOnEnter(event){
+            if(event.keyCode == 13) { 
+                addToDo(); 
+            } 
+        }
+    </script>
 </head>
-<body>
-    <div class="outer w-100 container">
+<body onload="renderCurrentTodos()">
+    <div class="outer w-100 container col-sm-12">
         <div class="to-do-card px-2 pb-2">
             <h1 class="pb-1">todos</h1>
             <div class="row w-100 d-flex m-0 mt-1">
-                <div class="col-sm-11 p-0">
-                    <input type="text" class="no-outline w-100 styled-input min-height-48" name="toDoInput" id="toDoInput" placeholder="What needs to be done?">
+                <div class="col-sm-2 p-0">
+                    <input type="button" class="button no-outline w-100 min-height-48" name="addToDoButton" id="addToDoButton" value="Add" onclick="addToDo()">
                 </div>
-                <div class="col-sm-1 p-0">
-                    <input type="button" class="button no-outline w-100 min-height-48" name="addToDoButton" id="addToDoButton" value=">">
+                <div class="col-sm-10 p-0">
+                    <input type="text" class="no-outline w-100 styled-input min-height-48" name="toDoInput" id="toDoInput" placeholder="What needs to be done?" onkeyup="addToDoOnEnter(event)">
                 </div>
             </div>
             <div class="to-do-items" id="to-do-items">
-                <div class="row to-do-item w-100 m-0 d-flex min-height-48 pt-1">
-                    <div class="col-sm-1 to-do-done p-0">
-                        <input type="checkbox" name="toDoDone" class="w-100 m-0">
-                    </div>
-                    <div class="col-sm-10 to-do-text p-0 pb-1 px-0_5">
-                        <span>
-                            Do something Do something Do something Do something Do something Do something Do something 
-                        </span>
-                    </div>
-                    <div class="col-sm-1 remove-to-do p-0 pr-1">
-                        <input type="button" class="button no-outline fr remove-button" name="removeToDo" value="X">
-                    </div>
-                </div>
-    
-                <div class="row to-do-item w-100 m-0 d-flex min-height-48 pt-1">
-                    <div class="col-sm-1 to-do-done p-0">
-                        <input type="checkbox" name="toDoDone" class="w-100 m-0">
-                    </div>
-                    <div class="col-sm-10 to-do-text p-0 pb-1 px-0_5">
-                        <span>
-                            Do something
-                        </span>
-                    </div>
-                    <div class="col-sm-1 remove-to-do p-0 pr-1">
-                        <input type="button" class="button no-outline fr remove-button" name="removeToDo" value="X">
-                    </div>
-                </div>
-    
-                <div class="row to-do-item w-100 m-0 d-flex min-height-48 pt-1">
-                    <div class="col-sm-1 to-do-done p-0">
-                        <input type="checkbox" name="toDoDone" class="w-100 m-0">
-                    </div>
-                    <div class="col-sm-10 to-do-text p-0 pb-1 px-0_5">
-                        <span>
-                            Do something Do something Do something Do something Do something Do something Do something Do something Do something Do something Do something Do something Do something Do something Do something Do something Do something Do something Do something Do something Do something Do something Do something
-                        </span>
-                    </div>
-                    <div class="col-sm-1 remove-to-do p-0 pr-1">
-                        <input type="button" class="button no-outline fr remove-button" name="removeToDo" value="X">
-                    </div>
-                </div>
             </div>
         </div>
     </div>
