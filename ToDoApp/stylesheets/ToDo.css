@@ -17,6 +17,7 @@
   margin-bottom: 10rem;
   -webkit-box-shadow: 2px 5px 10px grey;
           box-shadow: 2px 5px 10px grey;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .styled-input {
@@ -111,6 +112,10 @@
   border-top: 2px solid white;
 }
 
+.to-do-item:hover {
+  background-color: #d9d9d9;
+}
+
 .done {
   text-decoration: line-through;
   background-color: #f3f3f3;
@@ -118,18 +123,37 @@
 }
 
 input[type=checkbox] {
-  height: 24px;
-  width: 24px;
-}
-
-.remove-button {
-  min-height: 24px;
-  width: 24px;
-  font-size: small;
-  border-radius: 16px;
+  height: 18px;
 }
 
 .to-do-text {
   text-align: left;
+}
+
+.heading {
+  font-size: xx-large;
+  -webkit-text-decoration: solid;
+          text-decoration: solid;
+  color: #23a5cc;
+}
+
+.heading-div {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.remove-icon {
+  font-size: 24px;
+  color: #23a5cc;
+  cursor: pointer;
+}
+
+.remove-icon:hover {
+  color: #1c82a0;
+}
+
+.to-do-done {
+  margin-top: 3px;
 }
 /*# sourceMappingURL=ToDo.css.map */

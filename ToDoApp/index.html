@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <script>
         function addToDo(){
             let toDoInput = document.getElementById("toDoInput");
@@ -26,8 +27,10 @@
 <body onload="renderCurrentTodos()">
     <div class="outer w-100 container col-sm-12">
         <div class="to-do-card px-2 pb-2">
-            <h1 class="pb-1">todos</h1>
-            <div class="row w-100 d-flex m-0 mt-1">
+            <div class="p-1 mt-1 heading-div">
+                <span class="heading">todos</span>
+            </div>
+            <div class="row w-100 d-flex m-0">
                 <div class="col-sm-2 p-0">
                     <input type="button" class="button no-outline w-100 min-height-48" name="addToDoButton" id="addToDoButton" value="Add" onclick="addToDo()">
                 </div>

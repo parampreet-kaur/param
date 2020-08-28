@@ -1,4 +1,5 @@
 $primary-color: grey;
+$secondary-color: rgb(35, 165, 204);
 
 .outer{
     background-color: lighten($primary-color, $amount: 40%);
@@ -16,6 +17,7 @@ $primary-color: grey;
     margin-top: 10rem;
     margin-bottom: 10rem;
     box-shadow: 2px 5px 10px $primary-color;
+    font-family: "Times New Roman", Times, serif;
 }
 
 .styled-input {
@@ -106,6 +108,9 @@ $primary-color: grey;
     min-height: 48px;
     background-color: lighten($primary-color, $amount: 40%);
     border-top: 2px solid white;
+    &:hover{
+        background-color: lighten($primary-color, $amount: 35%);
+    }
 }
 
 .done{
@@ -115,17 +120,32 @@ $primary-color: grey;
 }
 
 input[type = checkbox]{
-    height: 24px;
-    width: 24px;
-}
-
-.remove-button{
-    min-height: 24px;
-    width: 24px;
-    font-size: small;
-    border-radius: 16px;
+    height: 18px;
 }
 
 .to-do-text{
     text-align: left;
+}
+
+.heading{
+    font-size: xx-large;
+    text-decoration: solid;
+    color: $secondary-color;
+}
+
+.heading-div{
+    justify-content: center;
+}
+
+.remove-icon{
+    font-size: 24px;
+    color: $secondary-color;
+    cursor: pointer;
+    &:hover{
+        color: darken($secondary-color, $amount: 10%);
+    }
+}
+
+.to-do-done{
+    margin-top: 3px;
 }
