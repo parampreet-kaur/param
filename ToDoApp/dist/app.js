@@ -112,7 +112,7 @@ function renderCurrentTodos() {
 }
 function addNewToDoItem(toDoInputValue) {
     var op = new ToDoOperation();
-    if (toDoInputValue != null && toDoInputValue.length > 0) {
+    if (toDoInputValue != null && toDoInputValue.trim.length > 0) {
         op.addToDo(toDoInputValue);
     }
 }
