@@ -15,8 +15,8 @@ class ToDo {
 var ToDoArray = [
     new ToDo("to-do-1", 'Go for a walk', ToDoStatus.active),
     new ToDo("to-do-2", 'Send an email for applying holidays in the month of October', ToDoStatus.active),
-    new ToDo("to-do-3", 'Send laptop for repair', ToDoStatus.active),
-    new ToDo("to-do-4", 'Pay electricity bill', ToDoStatus.done),
+    new ToDo("to-do-3", 'Send laptop for repair', ToDoStatus.done),
+    new ToDo("to-do-4", 'Pay electricity bill', ToDoStatus.active),
 ];
 class ToDoRender {
     renderToDo(toDo) {
@@ -40,7 +40,7 @@ class ToDoRender {
         removeIcon.setAttribute("class", "lar la-window-close remove-icon");
         removeIcon.setAttribute("onclick", "removeToDoItem('" + toDo.id + "')");
         var removeBtnDiv = document.createElement("div");
-        removeBtnDiv.setAttribute("class", "col-sm-1 remove-to-do p-0 pr-1");
+        removeBtnDiv.setAttribute("class", "col-sm-1 remove-to-do p-0 pr-1 pl-0_5");
         removeBtnDiv.appendChild(removeIcon);
         var toDoItem = document.createElement("div");
         toDoItem.setAttribute("id", toDo.id);
@@ -48,12 +48,10 @@ class ToDoRender {
         toDoItem.appendChild(checkboxDiv);
         toDoItem.appendChild(descDiv);
         toDoItem.appendChild(removeBtnDiv);
-        var toDoItems = document.getElementById("to-do-items");
-        console.log("todoitems:" + toDoItems);
+        var toDoItems = document.getElementById("toDoItems");
         if (toDoItems != null && typeof toDoItems != undefined) {
             toDoItems.appendChild(toDoItem);
         }
-        console.log(toDo);
     }
 }
 class ToDoOperation {
@@ -69,26 +67,56 @@ class ToDoOperation {
         });
         var toDoRender = new ToDoRender();
         toDoRender.renderToDo(newToDo);
-        console.log(ToDoArray.toString());
+        showNoDataText(false);
+        let selectedFilter = document.querySelector(".to-do-filter-clicked");
+        if (selectedFilter != null) {
+            selectedFilter.click();
+        }
     }
-    renderCurrentToDos() {
+    renderCurrentToDos(status) {
         if (ToDoArray.length > 0) {
             var toDoRender = new ToDoRender();
             for (var eachToDo of ToDoArray) {
-                toDoRender.renderToDo(eachToDo);
+                if (status != null) {
+                    var toDoItem = document.getElementById(eachToDo.id);
+                    if (toDoItem != null) {
+                        toDoItem.classList.add("d-none");
+                        if (status === "active" && eachToDo.status == ToDoStatus.active.toString()) {
+                            toDoItem.classList.remove("d-none");
+                        }
+                        else if (status === "done" && eachToDo.status == ToDoStatus.done.toString()) {
+                            toDoItem.classList.remove("d-none");
+                        }
+                        else if (status === "all") {
+                            toDoItem.classList.remove("d-none");
+                        }
+                        else {
+                            toDoItem.classList.add("d-none");
+                        }
+                    }
+                }
+                else {
+                    toDoRender.renderToDo(eachToDo);
+                }
             }
+            showNoDataText(false);
         }
-        console.log("Rendered current todos");
+        else {
+            showNoDataText(true);
+        }
     }
     removeToDo(id) {
-        let element = document.getElementById(id);
-        ToDoArray.forEach(function (value, index) {
-            if (value.id === id) {
-                ToDoArray.splice(index, 1);
-            }
-        });
-        if (element != null) {
-            element.remove();
+        let toDoElement = document.getElementById(id);
+        if (toDoElement != null) {
+            ToDoArray.forEach(function (value, index) {
+                if (value.id === id) {
+                    ToDoArray.splice(index, 1);
+                }
+            });
+            toDoElement.remove();
+        }
+        if (ToDoArray.length == 0) {
+            showNoDataText(true);
         }
     }
     markDone(checked, id) {
@@ -97,31 +125,69 @@ class ToDoOperation {
             if (checked) {
                 toDoItem.classList.remove(ToDoStatus.active.toString());
                 toDoItem.classList.add(ToDoStatus.done.toString());
+                ToDoArray.find((value) => {
+                    if (value.id === id) {
+                        value.status = ToDoStatus.done;
+                    }
+                });
             }
             else {
                 toDoItem.classList.remove(ToDoStatus.done.toString());
                 toDoItem.classList.add(ToDoStatus.active.toString());
+                ToDoArray.find((value) => {
+                    if (value.id === id) {
+                        value.status = ToDoStatus.active;
+                    }
+                });
             }
         }
     }
 }
-function renderCurrentTodos() {
+function renderCurrentTodos(status, element) {
     var op = new ToDoOperation();
-    op.renderCurrentToDos();
-    console.log("done");
+    op.renderCurrentToDos(status);
+    if (element != null) {
+        let previousFilter = document.querySelector(".to-do-filter-clicked");
+        if (previousFilter != null) {
+            previousFilter.classList.remove("to-do-filter-clicked");
+        }
+        element.classList.add("to-do-filter-clicked");
+    }
+    displayCount();
 }
 function addNewToDoItem(toDoInputValue) {
     var op = new ToDoOperation();
     if (toDoInputValue != null && toDoInputValue.trim().length > 0) {
         op.addToDo(toDoInputValue);
     }
+    displayCount();
 }
 function removeToDoItem(id) {
     var op = new ToDoOperation();
     op.removeToDo(id);
+    displayCount();
 }
 function markToDoItemDone(checked, id) {
     var op = new ToDoOperation();
     op.markDone(checked, id);
+}
+function showNoDataText(show) {
+    let noDataDiv = document.getElementById("noData");
+    if (show) {
+        if (noDataDiv != null && noDataDiv.classList.contains("d-none")) {
+            noDataDiv.classList.remove("d-none");
+        }
+    }
+    else {
+        if (noDataDiv != null && !noDataDiv.classList.contains("d-none")) {
+            noDataDiv.classList.add("d-none");
+        }
+    }
+}
+function displayCount() {
+    let toDoCountElement = document.getElementById("toDoCount");
+    if (toDoCountElement != null) {
+        toDoCountElement.innerText = ToDoArray.length.toString();
+    }
 }
 //# sourceMappingURL=app.js.map

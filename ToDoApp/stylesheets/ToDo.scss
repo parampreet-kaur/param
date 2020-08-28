@@ -42,6 +42,10 @@ $secondary-color: rgb(35, 165, 204);
     padding: 0px !important;
 }
 
+.pl-0_5{
+    padding-left: 0.5rem !important;
+}
+
 .p-1{
     padding: 1rem !important;
 }
@@ -55,6 +59,11 @@ $secondary-color: rgb(35, 165, 204);
 }
 
 .pb-1{
+    padding-bottom: 1rem !important;
+}
+
+.py-1{
+    padding-top: 1rem !important;
     padding-bottom: 1rem !important;
 }
 
@@ -94,6 +103,10 @@ $secondary-color: rgb(35, 165, 204);
 
 .d-flex{
     display: flex;
+}
+
+.d-none{
+    display: none !important;
 }
 
 .fr{
@@ -148,4 +161,22 @@ input[type = checkbox]{
 
 .to-do-done{
     margin-top: 3px;
+}
+
+.to-do-filter{
+    justify-content: center;
+    background-color: lighten($primary-color, $amount: 25%);
+    border-top: 1px solid white;
+    border-bottom: 2px solid white;
+    border-right: 1px solid white;
+    font-size: initial;
+    margin-top: 0;
+    margin-bottom: 0;
+    &:hover{
+        background-color: lighten($primary-color, $amount: 20%);
+        cursor: pointer;
+    }
+    &-clicked{
+        border-bottom: 2px solid $secondary-color;
+    }
 }

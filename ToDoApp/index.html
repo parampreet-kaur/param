@@ -38,7 +38,13 @@
                     <input type="text" class="no-outline w-100 styled-input min-height-48" name="toDoInput" id="toDoInput" placeholder="What needs to be done?" onkeyup="addToDoOnEnter(event)">
                 </div>
             </div>
-            <div class="to-do-items" id="to-do-items">
+            <div id="filtersDiv" class="d-flex">
+                <div class="col-sm-4 px-0_5 to-do-filter to-do-filter-clicked" onclick="renderCurrentTodos('all', this)">All(<span id="toDoCount"></span>)</div>
+                <div class="col-sm-4 px-0_5 to-do-filter" onclick="renderCurrentTodos('active', this)">Active</div>
+                <div class="col-sm-4 px-0_5 to-do-filter" onclick="renderCurrentTodos('done', this)">Completed</div>
+            </div>
+            <div id="toDoItems">
+                <div class="py-1" id="noData">No data to show</div>
             </div>
         </div>
     </div>

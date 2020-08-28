@@ -42,6 +42,10 @@
   padding: 0px !important;
 }
 
+.pl-0_5 {
+  padding-left: 0.5rem !important;
+}
+
 .p-1 {
   padding: 1rem !important;
 }
@@ -55,6 +59,11 @@
 }
 
 .pb-1 {
+  padding-bottom: 1rem !important;
+}
+
+.py-1 {
+  padding-top: 1rem !important;
   padding-bottom: 1rem !important;
 }
 
@@ -96,6 +105,10 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.d-none {
+  display: none !important;
 }
 
 .fr {
@@ -155,5 +168,27 @@ input[type=checkbox] {
 
 .to-do-done {
   margin-top: 3px;
+}
+
+.to-do-filter {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: silver;
+  border-top: 1px solid white;
+  border-bottom: 2px solid white;
+  border-right: 1px solid white;
+  font-size: initial;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.to-do-filter:hover {
+  background-color: #b3b3b3;
+  cursor: pointer;
+}
+
+.to-do-filter-clicked {
+  border-bottom: 2px solid #23a5cc;
 }
 /*# sourceMappingURL=ToDo.css.map */
