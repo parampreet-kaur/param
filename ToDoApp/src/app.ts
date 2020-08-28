@@ -145,7 +145,7 @@ function renderCurrentTodos(){
 
 function addNewToDoItem(toDoInputValue: string){
     var op: ToDoOperation = new ToDoOperation();
-    if(toDoInputValue != null && toDoInputValue.trim.length > 0)
+    if(toDoInputValue != null && toDoInputValue.trim().length > 0)
     {
         op.addToDo(toDoInputValue);
     }
