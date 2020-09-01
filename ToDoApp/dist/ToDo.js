@@ -3,7 +3,7 @@ export var ToDoStatus;
     ToDoStatus["active"] = "active";
     ToDoStatus["done"] = "done";
 })(ToDoStatus || (ToDoStatus = {}));
-export class ToDo {
+export default class ToDo {
     constructor(id, description, status) {
         this.id = id;
         this.description = description;

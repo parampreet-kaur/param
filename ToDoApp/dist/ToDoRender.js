@@ -1,6 +1,6 @@
 import { ToDoStatus } from './ToDo.js';
-import { ToDoOperation } from './ToDoOperation.js';
-export class ToDoRender {
+import ToDoOperation from './ToDoOperation.js';
+export default class ToDoRender {
     renderToDo(toDo) {
         let cb = document.createElement("input");
         cb.setAttribute("type", "checkbox");
@@ -24,9 +24,9 @@ export class ToDoRender {
         let removeIcon = document.createElement("i");
         removeIcon.setAttribute("class", "lar la-window-close remove-icon");
         removeIcon.addEventListener('click', function () {
-            var op = new ToDoOperation();
-            op.removeToDo(toDo.id);
-            op.displayCount();
+            var toDoOperation = new ToDoOperation();
+            toDoOperation.removeToDo(toDo.id);
+            toDoOperation.displayCount();
         });
         var removeBtnDiv = document.createElement("div");
         removeBtnDiv.setAttribute("class", "col-sm-1 remove-to-do p-0 pr-1 pl-0_5");
@@ -38,9 +38,7 @@ export class ToDoRender {
         toDoItem.appendChild(descDiv);
         toDoItem.appendChild(removeBtnDiv);
         var toDoItems = document.getElementById("toDoItems");
-        if (toDoItems != null && typeof toDoItems != undefined) {
-            toDoItems.appendChild(toDoItem);
-        }
+        toDoItems.appendChild(toDoItem);
     }
 }
 //# sourceMappingURL=ToDoRender.js.map

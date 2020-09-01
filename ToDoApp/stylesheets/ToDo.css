@@ -1,3 +1,7 @@
+body {
+  background-color: #e6e6e6 !important;
+}
+
 .outer {
   background-color: #e6e6e6;
   text-align: center;
@@ -11,10 +15,8 @@
 .to-do-card {
   width: 40%;
   background-color: white;
-  border-radius: 10px;
   margin: auto;
-  margin-top: 10rem;
-  margin-bottom: 10rem;
+  margin-top: 8rem;
   -webkit-box-shadow: 2px 5px 10px grey;
           box-shadow: 2px 5px 10px grey;
   font-family: "Times New Roman", Times, serif;
@@ -177,18 +179,28 @@ input[type=checkbox] {
   background-color: silver;
   border-top: 1px solid white;
   border-bottom: 2px solid white;
-  border-right: 1px solid white;
   font-size: initial;
   margin-top: 0;
   margin-bottom: 0;
+  color: #1c82a0;
 }
 
 .to-do-filter:hover {
   background-color: #b3b3b3;
+  color: #145f75;
   cursor: pointer;
 }
 
 .to-do-filter-clicked {
   border-bottom: 2px solid #23a5cc;
+  color: #145f75;
+}
+
+.border-right_1 {
+  border-right: 1px solid white;
+}
+
+.to-do-count {
+  font-size: small;
 }
 /*# sourceMappingURL=ToDo.css.map */

@@ -1,6 +1,10 @@
 $primary-color: grey;
 $secondary-color: rgb(35, 165, 204);
 
+body{
+    background-color: lighten($primary-color, $amount: 40%) !important;
+}
+
 .outer{
     background-color: lighten($primary-color, $amount: 40%);
     text-align: center;
@@ -12,10 +16,8 @@ $secondary-color: rgb(35, 165, 204);
 .to-do-card{
     width: 40%;
     background-color: white;
-    border-radius: 10px;
     margin: auto;
-    margin-top: 10rem;
-    margin-bottom: 10rem;
+    margin-top: 8rem;
     box-shadow: 2px 5px 10px $primary-color;
     font-family: "Times New Roman", Times, serif;
 }
@@ -168,15 +170,25 @@ input[type = checkbox]{
     background-color: lighten($primary-color, $amount: 25%);
     border-top: 1px solid white;
     border-bottom: 2px solid white;
-    border-right: 1px solid white;
     font-size: initial;
     margin-top: 0;
     margin-bottom: 0;
+    color: darken($secondary-color, $amount: 10%);
     &:hover{
         background-color: lighten($primary-color, $amount: 20%);
+        color: darken($secondary-color, $amount: 20%);
         cursor: pointer;
     }
     &-clicked{
         border-bottom: 2px solid $secondary-color;
+        color: darken($secondary-color, $amount: 20%);
     }
+}
+
+.border-right_1{
+    border-right: 1px solid white;
+}
+
+.to-do-count{
+    font-size: small;
 }

@@ -3,7 +3,7 @@ export enum ToDoStatus {
     done = "done",
 }
 
-export class ToDo{
+export default class ToDo{
     id: string;
     description: string;
     status: ToDoStatus;

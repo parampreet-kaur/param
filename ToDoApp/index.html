@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-do-app</title>
-    <script type="module" src="dist/app.js"></script>
+    <script type="module" src="dist/app.js" defer></script>
     <link rel="stylesheet" href="stylesheets/ToDo.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -18,17 +18,17 @@
                 <span class="heading">todos</span>
             </div>
             <div class="row w-100 d-flex m-0">
-                <div class="col-sm-2 p-0">
-                    <input type="button" class="button no-outline w-100 min-height-48" name="addToDoButton" id="addToDoButton" value="Add">
-                </div>
                 <div class="col-sm-10 p-0">
                     <input type="text" class="no-outline w-100 styled-input min-height-48" name="toDoInput" id="toDoInput" placeholder="What needs to be done?">
                 </div>
+                <div class="col-sm-2 p-0">
+                    <input type="button" class="button no-outline w-100 min-height-48" name="addToDoButton" id="addToDoButton" value="Add">
+                </div>
             </div>
             <div id="filtersDiv" class="d-flex">
-                <div id="filterAll" class="col-sm-4 px-0_5 to-do-filter to-do-filter-clicked">All(<span id="toDoCount"></span>)</div>
-                <div id="filterActive" class="col-sm-4 px-0_5 to-do-filter">Active</div>
-                <div id="filterDone" class="col-sm-4 px-0_5 to-do-filter">Completed</div>
+                <div id="filterAll" class="col-sm-4 border-right_1 px-0_5 to-do-filter to-do-filter-clicked">All(<span class="to-do-count" id="toDoCountAll"></span>)</div>
+                <div id="filterActive" class="col-sm-4 border-right_1 px-0_5 to-do-filter">Active(<span class="to-do-count" id="toDoCountActive"></span>)</div>
+                <div id="filterDone" class="col-sm-4 px-0_5 to-do-filter">Completed(<span class="to-do-count" id="toDoCountDone"></span>)</div>
             </div>
             <div id="toDoItems">
                 <div class="py-1" id="noData">No data to show</div>
