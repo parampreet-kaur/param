@@ -2,7 +2,7 @@
     <div class="py-3 text-center">
         <form>
             <div class="pt-2 form-group">
-                <select class="form-control" (onSelect) = "getSubCategories(this)">
+                <select class="form-control">
                     <option disabled>Select your car category</option>
                     <option *ngFor = "let category of categories" [value]="category.categoryId">
                         {{category.categoryName}}
