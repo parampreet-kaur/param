@@ -1,8 +1,5 @@
-export class CarImageModel{
-    constructor(
-        public carImageId: number,
-        public carId: number,
-        public picture: string
-    )
-    {}
+export interface CarImageModel{
+    carImageId: number,
+    carId: number,
+    picture: string
 }

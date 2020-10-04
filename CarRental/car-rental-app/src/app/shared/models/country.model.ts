@@ -1,3 +1,4 @@
-export class CountryModel{
-    constructor(public countryId: number, public countryName: string) { }
+export interface CountryModel{
+    countryId: number, 
+    countryName: string
 }

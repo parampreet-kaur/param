@@ -1,10 +1,12 @@
-export class AgencyOwnerModel{
-    constructor(
-        public agencyOwnerId: number, public agencyOwnerName: string,
-        public username: string, public password: string,
-        public emailId: string, public mobileNo: string,
-        public countryId: number, public stateId: number,
-        public cityId: number, public address: string
-    )
-    {}
+export interface AgencyOwnerModel{
+    agencyOwnerId: number, 
+    agencyOwnerName: string,
+    username: string, 
+    password: string,
+    emailId: string,
+    mobileNo: string,
+    countryId: number, 
+    stateId: number,
+    cityId: number, 
+    address: string    
 }

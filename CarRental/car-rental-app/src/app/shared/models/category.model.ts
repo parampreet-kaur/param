@@ -1,6 +1,6 @@
-export class CategoryModel{
-    constructor(
-        public categoryId: number, public categoryName: string, public carType: string
-    )
-    {}
+export interface CategoryModel{
+    categoryId: number, 
+    categoryName: string,
+    carType: string,
+    id?: string
 }

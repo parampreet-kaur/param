@@ -15,7 +15,6 @@ export class CustomerServicesComponent implements OnInit {
 
   ngOnInit() {
     this.customerServices = this.customerServiceService.getCustomerServices();
-    console.log(this.customerServices);
   }
 
 }

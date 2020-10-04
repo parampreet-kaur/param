@@ -1,3 +1,5 @@
-export class CityModel{
-    constructor(public cityId: number, public cityName: string, public stateId: number) { }
+export interface CityModel{
+    cityId: number, 
+    cityName: string,
+    stateId: number
 }

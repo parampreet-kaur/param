@@ -11,9 +11,4 @@ export class NavigationBarComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  goToServices(){
-    
-  }
-
 }

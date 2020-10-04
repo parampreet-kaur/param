@@ -13,6 +13,8 @@ import { ReviewsComponent } from './reviews/reviews.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { BookingFormComponent } from './booking-form/booking-form.component';
 import { HomePageHeaderComponent } from './home-page-header/home-page-header.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { HomePageHeaderComponent } from './home-page-header/home-page-header.com
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
